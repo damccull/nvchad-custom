@@ -10,5 +10,10 @@ M.crates = {
     }
   }
 }
+M.undotree = {
+  n = {
+    ["<leader>u"] = {":UndotreeToggle <CR>", "Toggle undotree"}
+  }
+}
 return M
 
