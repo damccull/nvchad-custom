@@ -33,11 +33,13 @@ local plugins = {
       require('rust-tools').setup(opts)
     end,
   },
---[[
   {
-    "mfussenegger/nvim-dap",
+    "folke/trouble.nvim",
+    cmd = "Trouble",
+    config = function()
+        require("trouble").setup()
+    end,
   },
-]]
   {
     "saecki/crates.nvim",
     ft = {"toml"},
