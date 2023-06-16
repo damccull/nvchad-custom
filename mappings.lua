@@ -4,16 +4,17 @@ M.crates = {
   n = {
     ["<leader>rcu"] = {
       function()
-        require('crates').upgrade_all_crates()
+        require("crates").upgrade_all_crates()
       end,
-      "update crates"
-    }
-  }
+      "update crates",
+    },
+  },
 }
+
 M.undotree = {
   n = {
-    ["<leader>u"] = {":UndotreeToggle <CR>", "Toggle undotree"}
-  }
+    ["<leader>u"] = { ":UndotreeToggle <CR>", "Toggle undotree" },
+  },
 }
-return M
 
+return M

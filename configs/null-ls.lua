@@ -1,30 +1,21 @@
-local null_ls = require "null-ls"
+local present, null_ls = pcall(require, "null-ls")
 
-local formatting = null_ls.builtins.formatting
-local lint = null_ls.builtins.diagnostics
+if not present then
+  return
+end
+
+local b = null_ls.builtins
 
 local sources = {
-    formatting.prettier,
-    formatting.stylua,
+  -- webdev stuff
+  b.formatting.deno_fmt, -- deno is very fast for ts/js stuff
+  b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } },
 
-    lint.shellcheck,
+  -- lua
+  b.formatting.stylua,
 }
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 null_ls.setup {
-    debug = true,
-    source = sources,
-    on_attach = function(client, bufnr)
-        if client.supports_method "textDocument/formatting" then
-            vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                bugger = bufnr,
-                callback = function()
-                    vim.lsp.buf.format { async = true }
-                end,
-            })
-        end
-    end,
+  debug = true,
+  sources = sources,
 }

@@ -1,1 +1,1 @@
-require("custom.configs.vim_options")
+require "custom.configs.vim_options"

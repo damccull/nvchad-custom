@@ -1,4 +1,4 @@
-require("custom.helpers.get_home_folder")
+require "custom.helpers.get_home_folder"
 --todo: add option (based on operating system) to set shell preference
 
 vim.opt.colorcolumn = "80"
@@ -28,8 +28,7 @@ vim.opt.termguicolors = true
 -- Ensure scolling has an offset of 8 lines
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.isfname:append "@-@"
 
 -- Update time fast?
 vim.opt.updatetime = 50
-
