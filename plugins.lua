@@ -4,13 +4,12 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "lua-language-server",
         "html-lsp",
         "yaml-language-server",
         "rust-analyzer",
-        "rust-lang/rust.vim",
         "sqlls",
         "stylua",
-        "nvim-lua/plenary.nvim"
       },
     },
   },
