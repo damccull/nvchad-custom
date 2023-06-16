@@ -1,6 +1,6 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
+local on_attach = lspconfig.on_attach
+local capabilities = lspconfig.capabilities
 
 local servers = { "html", "cssls", "sqlls" }
 
