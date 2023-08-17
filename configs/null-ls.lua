@@ -13,6 +13,9 @@ local sources = {
 
   -- lua
   b.formatting.stylua,
+
+  -- sql
+  b.formatting.pg_format.with { filtetypes = { "sql", "pgsql" } },
 }
 
 null_ls.setup {
